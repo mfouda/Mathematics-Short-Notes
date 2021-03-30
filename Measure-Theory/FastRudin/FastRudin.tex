@@ -1,0 +1,72 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[OT1]{fontenc}
+\usepackage{amsfonts, amsmath, amsthm, amssymb}
+\usepackage{bbm}
+\usepackage{mathtools}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor}
+\usepackage{bigints}
+\usepackage{glossaries}
+\usepackage{graphicx}
+\usepackage{enumerate}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{example}{Example}
+
+\title{Fast Rudin}
+\author{Davi Sales Barreira}
+\date{\today}
+\begin{document}
+\maketitle
+\begin{abstract}
+	This document are condensed notes on the book
+	``Real and Complex Analysis'' \citep{rudin1987real}. The goal is to cover the
+	first 9 chapters of the book.
+\end{abstract}
+
+\section{Abstract Integration}
+
+\begin{definition}[Topological Space]
+	$(X,\tau)$ is a topological space where $\tau$ is the collection of open
+	sets in $X$, such that:
+	\begin{enumerate}[(i)]
+		\item $X \in \tau$;
+		\item Se $A_1,...,A_n \in \tau \implies \cap_{i=1}^n A_i \in \tau$;
+		\item Se $A_\alpha \in \tau$ for any $\alpha \in \Lambda \implies \cup_{\alpha \in \Lambda} A_\alpha \in \tau$;
+	\end{enumerate}
+	$\tau$ is the topology of $X$.
+\end{definition}
+
+\begin{definition}[Measurable Space]
+	$(X,\mathcal F)$ is a measurable space where $\mathcal F$ is a $\sigma$-algebra in $X$.
+	A $\sigma$-algebra is defined such that:
+	\begin{enumerate}[(i)]
+		\item $X \in \mathcal F$;
+		\item If $A \in \mathcal F$ then $A^c \in \mathcal F$;
+		\item If $A_n \in \mathcal F \ \forall n \in \mathbb N$ then $\cup_{n \in \mathbb N} A_n \in \mathcal F$;
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}[Continuous Function]
+	For $(X,\tau)$ and $(Y,\tau')$ topological spaces, we say $f:X \to Y$ is continuous if for every open set
+	$V \subset Y$ we have that $f^{-1}(V) \subset X$ is open.
+\end{definition}
+
+\begin{definition}[Measurable Function]
+	For $(X,\mathcal F)$ a measurable space and $(Y,\tau')$ a topological space, we say $f:X \to Y$ is
+	$\mathcal F$-measurable if for every open set
+	$V \subset Y$ we have that $f^{-1}(V) \in \mathcal F$.
+\end{definition}
+
+  \bibliography{ref}
+  \bibliographystyle{plainnat}
+\end{document}
+
