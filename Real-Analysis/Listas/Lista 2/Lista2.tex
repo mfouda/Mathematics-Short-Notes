@@ -63,54 +63,61 @@
 
 
 
-\title{Lista de Exercícios 1}
+\title{Lista de Exercícios 2}
 \author{}
 \date{\today}
 \begin{document}
 \maketitle
 
 \noindent
-\textbf{Questão 1.} Prove que se $f \in C([a,b])$, então $|f| \in C([a,b])$. Mostre que
-$|f| \in C([a,b])$ não implica que $f \in C([a,b])$.
+\textbf{Questão 1.}
+Prove que não existe função contínua $f:[a,b] \to \mathbb R$
+que assuma cada um dos seus valores $f(x)$ exatamente duas vezes.
 \vspace{5mm}
 
 \noindent
-\textbf{Questão 2.} Prove que $(f_n)$ converge uniformemente
-para $f$ em $\mathbb R$ se, e somente se,
-$$\lim_{n\to +\infty}\sup_{x \in \mathbb R} |f_n(x) - f(x)|= 0$$.
+\textbf{Questão 2.}
+Se toda função contínua $f: X \to \mathbb R$ é uniformemente contínua, prove que o
+conjunto $X$ é fechado, porém não necessariamente compacto.
 \vspace{5mm}
 
 \noindent
-\textbf{Questão 3. (Teorema do ponto fixo de Browder)} Prove que se
-$f:[a,b]\to [a,b]$ é contínua, então $f$ possui um ponto fixo, ou seja, existe 
-$c \in [a,b]$ tal que $f(c)=c$. Dê um exemplo de função contínua $f:[0,1)\to [0,1)$
-onde não há ponto fixo.
+\textbf{Questão 3.}
+Seja $f:\mathbb R \to \mathbb R$ contínua. Se existem
+$\lim_{x\to +\infty} f(x)$ e
+$\lim_{x\to -\infty} f(x)$, prove que $f$ é uniformemente contínuna.
 \vspace{5mm}
 
 \noindent
-\textbf{Questão 4.} Seja $f$ contínua tal que $f(a+b)= f(a)+f(b)$ para todo
-$a,b \in \mathbb R$. Prove que $f(x)=cx$, onde $c:=f(1)$.
+\textbf{Questão 4.}
+Seja $f:\mathbb R \to \mathbb R$ derivável em $a$. Sejam $(x_n)$ e $(y_n)$ sequências
+de pontos tais que $\lim_{n\to \infty} x_n = \lim_{n\to \infty} y_n = a$
+e $x_n < a < y_n$. Prove que:
+\begin{equation*}
+	\lim_{n\to \infty } \frac{f(x_n)-f(y_n)}{x_n - y_n} = f'(a)
+\end{equation*}
 \vspace{5mm}
 
 \noindent
-\textbf{Questão 5.} Prove que se $f_1,...,f_n$ são contínuas em $A \subset \mathbb R$,
-então $h:\max\{f_1,...,f_n\}$ é contínua em $A$ (i.e. $h(x) = \max\{f_1(x),...,f_n(x)\}$).
+\textbf{Questão 5.}
+Prove que $f$ é convexa no intervalo $I$ se, e somente se, para todos $x,y \in I$, tem-se
+que a função $g(t):= f(y + t(x-y))$ é convexa em $[0,1]$.
 \vspace{5mm}
 
 \noindent
-\textbf{Questão 6. (Teorema da Contração Uniforme)}
-Seja $f:\mathbb R \to \mathbb R$ tal que existe $c \in (0,1)$ e
-$$
-|f(x) - f(y)| \leq c|x-y|, \quad \forall x,y \in \mathbb R
-$$
-\begin{enumerate}[(a)]
-	\item Prove que $f$ é contínua.
-	\item Escolha qualquer $y \in \mathbb R$ e defina uma sequência $y, f(y), f(f(y)),...$
-	Prove que essa sequência converge para um ponto fixo de $f$.
-	\item Prove que o ponto fixo é único.
-\end{enumerate}
+\textbf{Questão 6.}
+Seja $f$ contínua em $[a,b]$ e duas vezes derivável em $(a,b)$. Sejam
+$A:=(a,f(a))$ e $B:=(b,f(b))$. Suponha que se o segmento de reta ligando
+$A$ e $B$ intersecta o gráfico da $f$ num terceiro ponto (diferente de $A$ e $B$),
+então existe $c\in (a,b)$ tal que $f''(c)=0$
+\vspace{5mm}
 
-
+\noindent
+\textbf{Questão 7.}
+Seja $f$ contínua em $(a,b)$, e derivável em $(a,b)$, exceto talvez em $c \in (a,b)$.
+Prove que se $\lim_{x \to c} f'(x)$ existe e é finito igual a $A$, então $f$
+deve ser derivável em $c$ e $f'(c) = A$.
+\vspace{5mm}
 \nocite{*}
 
   \bibliography{ref}

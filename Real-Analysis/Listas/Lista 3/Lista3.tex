@@ -1,0 +1,156 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[OT1]{fontenc}
+\usepackage{amsfonts, amsmath, amsthm, amssymb}
+\usepackage{bbm}
+\usepackage{mathtools}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor}
+\usepackage{bigints}
+\usepackage{glossaries}
+\usepackage{graphicx}
+\usepackage{enumerate}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{example}{Example}
+
+\newcounter{countCode}
+\lstnewenvironment{code} [1][caption=Ponme caption, label=default]{%
+	\renewcommand*{\lstlistingname}{Listado} 
+	\setcounter{lstlisting}{\value{countCode}} 
+	\lstset{ %
+	language=java,
+	basicstyle=\ttfamily\footnotesize,       % the size of the fonts that are used for the code
+	numbers=left,                   % where to put the line-numbers
+	numberstyle=\sc,      % the size of the fonts that are used for the line-numbers
+	stepnumber=1,                   % the step between two line-numbers. 
+	numbersep=5pt,                 % how far the line-numbers are from the code
+	numberstyle=\color{red!50!blue},
+    	backgroundcolor=\color{lightgray!20},
+	rulecolor=\color{blue},
+	keywordstyle=\color{red}\bfseries,
+	showspaces=false,               % show spaces adding particular underscores
+	showstringspaces=false,         % underline spaces within strings
+	showtabs=false,                 % show tabs within strings adding particular underscores
+	frame=single,                   % adds a frame around the code
+	framexleftmargin=0mm,
+	numberblanklines=false,
+	xleftmargin=5pt,
+	breaklines=true,
+	breakatwhitespace=true,
+	breakautoindent=true,
+	captionpos=t,
+	texcl=true,
+	tabsize=2,                      % sets default tabsize to 3 spaces
+	extendedchars=true,
+	inputencoding=utf8, 
+	escapechar=\%,
+	morekeywords={print, println, size, background, strokeWeight, fill, line, rect, ellipse, triangle, arc, save, PI, HALF_PI, QUARTER_PI, TAU, TWO_PI, width, height,},
+	emph=[1]{print,println,}, emphstyle=[1]{\color{blue}}, % Mis palabras clave.
+	emph=[2]{width,height,}, emphstyle=[2]{\bf\color{violet}}, % Mis palabras clave.
+	emph=[3]{PI, HALF_PI, QUARTER_PI, TAU, TWO_PI}, emphstyle=[3]\color{orange!50!violet}, % Mis palabras clave.
+	emph=[4]{line, rect, ellipse, triangle, arc,}, emphstyle=[4]\color{green!70!black}, % Mis palabras clave.
+	%emph=[5]{size, background, strokeWeight, fill,}, emphstyle=[5]{\tt \color{red!30!blue}}, % Mis palabras clave.
+	%emph={[2]sqrt,baset}, emphstyle={[2]\color{blue}}, % f(sqrt(2)), sqrt a nivel 2 se pondrá azul
+	#1}}{\addtocounter{countCode}{1}}
+
+
+
+\title{Lista de Exercícios 2}
+\author{}
+\date{\today}
+\begin{document}
+\maketitle
+
+Notação: Sempre que usarmos $I$, estamos nos referindo a um intervalo (e.g. $(a,b)$, ou $[a,b]$...).
+
+\noindent
+\textbf{Questão 1.}
+Dê uma demonstração de que $f'' \geq 0 \implies f$ convexa
+usando a fórmula de Taylor com resto de Lagrange.
+\vspace{5mm}
+
+\noindent
+\textbf{Questão 2.}
+Seja $f:I\to \mathbb R$ onde $I$ é um intervalo. Prove que todo
+mínimo local $c \in I$ é um mínimo global em $I$.
+\vspace{5mm}
+
+\noindent
+\textbf{Questão 3.}
+Sejam $f,g: I \to \mathbb R$ duas vezes deriváveis no ponto $a \in \text{int} I$.
+Se $f(a)= g(a)$, $f'(a)=g'(a)$ e $f(x) \geq g(x)$ para todo $x \in I$.
+Prove que $f''(a) \geq g''(a)$.
+\vspace{5mm}
+
+\noindent
+\textbf{Questão 4.}
+Seja $f:I\to \mathbb R$ de classe $C^\infty$ em $I$. Suponha que exista 
+$K > 0$ tal que $|f^{(n)}(x)|\leq K$ para todo $x \in I$ e todo $n \in \mathbb N$.
+Prove que, para $x_0,x \in I$ quaisquer, vale
+\begin{equation*}
+	f(x) = \sum^{\infty}_{n=0} \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n.
+\end{equation*}
+\vspace{5mm}
+
+\noindent
+\textbf{Questão 5.}
+Seja $f$ dada por
+\begin{equation*}
+	f(x):=
+	\begin{cases}
+		e^{-1/x^2}, & \text{se } x\neq 0,\\
+		0, & \text{se } x=0.
+	\end{cases}
+\end{equation*}
+Calcule a série de Taylor de $f$ centrada em $0$. Mostre que a série não converge para $f$, i.e.
+$f(x) \neq \sum^\infty_{n=0} \frac{f^{(n)(0)}}{n!}x^n$.
+\vspace{5mm}
+
+\noindent
+\textbf{Questão 6.}
+Seja $f$ contínua em $[a,b]$ e duas vezes derivável em $(a,b)$. Sejam
+$A:=(a,f(a))$ e $B:=(b,f(b))$. Suponha que se o segmento de reta ligando
+$A$ e $B$ intersecta o gráfico da $f$ num terceiro ponto (diferente de $A$ e $B$),
+então existe $c\in (a,b)$ tal que $f''(c)=0$
+\vspace{5mm}
+
+\noindent
+\textbf{Questão 7.}
+Sejam $P,Q \in \mathcal P[a,b]$ e $f$ uma função limitada em $[a,b]$.
+Prove que se $P \subset Q$, então
+\begin{equation*}
+	I(f; P) \leq I(f; Q) \leq S(f; Q) \leq S(f;P).
+\end{equation*}
+\vspace{5mm}
+
+\noindent
+\textbf{Questão 8.}
+Prove que se modificarmos uma função integrável $f$
+num conjunto enumerável, então a integral pode deixar de existir.
+\vspace{5mm}
+
+\noindent
+\textbf{Questão 9.}
+Sejam $f,g:[a,b] \to \mathbb R$ contínuas. Prove que $f=0$ para todo $x \in [a,b]$ se alguma
+das seguintes condições é satisfeita:
+\begin{enumerate}[a)]
+	\item $\int^b_a |f(x)| dx = 0$;
+	\item $\int^y_x f(s) ds = 0$ para todo $x,y \in [a,b]$;
+	\item $\int^b_a f(x)g(x) dx = 0$ para toda função $g$;
+	\item $\int^b_a f(x)g(x) dx = 0$ para toda função $g$ que satisfaz $g(a) = g(b) =0$.
+\end{enumerate}
+\vspace{5mm}
+\nocite{*}
+
+  \bibliography{ref}
+  \bibliographystyle{plainnat}
+\end{document}
+
